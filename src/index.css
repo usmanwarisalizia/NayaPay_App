@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #6366f1;
+  --color-accent: #8b5cf6;
+  --color-bg: #f8fafc;
+  --color-card: #ffffff;
+  --color-text: #1e293b;
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+  --gradient-hover: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
+}
+
+/* Colorful animated background */
+.colorful-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.colorful-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--color-primary)20 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, var(--color-secondary)20 0%, transparent 50%),
+              radial-gradient(circle at 100% 100%, var(--color-accent)20 0%, transparent 50%);
+  animation: colorfulRotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes colorfulRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
