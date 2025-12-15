@@ -23,9 +23,7 @@ const Profile = () => {
   const loadProfile = async () => {
     try {
       setLoading(true);
-      // const data = await authAPI.getProfile();
       
-      // Mock data
       setProfile({
         name: 'John Doe',
         email: 'john.doe@example.com',
